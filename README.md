@@ -34,7 +34,7 @@ In your emacs config:
 
 Get the `Personal API Access Token` from:
 
-https://yourteam.esa.io/user/token
+https://yourteam.esa.io/user/tokens
 
 Put following to your .emacs:
 
