@@ -348,7 +348,7 @@ Parses the result and displays the list."
                       'repo number
                       'action 'esa-describe-button
                       'face 'default
-                      'esa-json esa))
+                      'esa-jsonesa))
   (insert "\n"))
 
 (defun esa-parse-esa (esa)
@@ -405,7 +405,6 @@ for the esa."
   "Show your esa describe."
   (setq buffer-read-only nil)
   (erase-buffer)
-  (esa-describe-esa-1 json)
   (setq buffer-read-only t)
   (goto-char (point-min)) (re-search-forward "^-\r?\n\n" nil t)
   (setq truncate-lines t)
@@ -429,6 +428,7 @@ for the esa."
   (let ((json (button-get button 'esa-json)))
     (with-current-buffer (get-buffer-create "*esa*")
       (esa-describe-read-mode)
+      (esa-describe-esa-1 json)
       (switch-to-buffer "*esa*"))))
 
 (defun esa-describe-read-only-header ()
